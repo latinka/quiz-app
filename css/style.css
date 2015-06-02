@@ -1,0 +1,205 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*End of Resets*/
+
+/*Begin of Custom Styles*/
+
+body {
+	background-color: #52383E;
+	font-family: 'Metamorphous', 'Medieval Sharp', serif;
+}
+a {
+	text-decoration: none;
+}
+.game {
+	position: relative;
+	z-index: 1;
+	width: 30em;
+	height: 25em;
+	margin-top: 5.5em;
+	margin-right: auto;
+	margin-left: auto;
+	border-top: 3px solid #FFFFFF;
+	border-bottom: 3px solid #FFFFFF;
+	text-align: center;
+}
+#simage {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+h1 {
+	color: #FFFFFF;
+	font-size: 2.9em;
+	text-transform: uppercase;
+	margin-bottom: 0.5em
+}
+#start {
+	font-family: 'Metamorphous', 'Medieval Sharp', serif;
+	font-size: 2.5em;
+	width: 10em;
+	height: 1.3em;
+	background-color: #FF4551;
+	color: #FFFFFF;
+	border-radius: 7px;
+	outline: none;
+	border-style: none;
+	text-transform: uppercase;
+}
+#start:hover {
+	background-color: #B61C42;
+}
+.count {
+	position: absolute;
+	top: 2.2em;
+	left: 0;
+	right: 0;
+	width: 10em;
+	height: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	color: #FFFFFF;
+	font-size: 1.7em;
+	text-align: center;
+	display: none;
+}
+#qimage{
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+}
+.question {
+	width: 12em;
+	height: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	color: #FFFFFF;
+	font-size: 1.8em;
+	text-align: center;
+}
+p {
+	margin-bottom: 0.5em;
+}
+ol{
+	width: 12em;
+}
+li {
+	height: 1.15em;
+	border: 3px solid #F5C354;
+	margin-bottom: 0.2em;
+	border-radius: 7px;
+	font-size: 0.9em;
+	padding-top: 0.15em;
+}
+li:hover {
+	background-color: #F5C354;
+	color: #52383E;
+}
+.help {
+	width: 30em;
+	height: 1em;
+	margin: 0.6em auto;
+	text-align: center;
+}
+.hint {
+	color: #F5C354;
+	text-align: center;
+	font-size: 1.6em;
+}
+.hint:hover {
+	color: #FFF;
+}
+.overlay {
+	position: absolute;
+	top: 3em;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 32em;
+	height: 30em;
+	margin: 3em auto;
+	background-color: #F5C354;
+	color: #52383E;
+	border-radius: 7px;
+	z-index: 9999;
+	text-align: center;
+}
+h3 {
+	text-transform: uppercase;
+	font-size: 2em;
+	margin-top: 4em;
+	margin-bottom: 2.5em;
+}
+.hint-text {
+	padding-left: 1.2em;
+	padding-right: 1.2em;
+	font-size: 1.25em;
+}
+.close {
+	color: #52383E;
+	float: right;
+	margin-top: 0.5em;
+	margin-right: 0.5em;
+	font-size: 3.5em;
+}
+.next {
+	width: 10em;
+	float: right;
+	margin-right: 5em;
+	text-align: center;
+}
+.proceed {
+	color: #F5C354;
+	font-size: 1.8em;
+	text-transform: uppercase;
+}
+.explanation {
+	color: #FFF;
+	font-size: 1.2em;
+}
+
