@@ -53,7 +53,7 @@ table {
 
 body {
 	background-color: #52383E;
-	font-family: 'Metamorphous', 'Medieval Sharp', serif;
+	font-family: 'MedievalSharp', serif;
 }
 a {
 	text-decoration: none;
@@ -62,7 +62,7 @@ a {
 	position: relative;
 	z-index: 1;
 	width: 30em;
-	height: 25em;
+	height: 27em;
 	margin-top: 5.5em;
 	margin-right: auto;
 	margin-left: auto;
@@ -78,10 +78,10 @@ h1 {
 	color: #FFFFFF;
 	font-size: 2.9em;
 	text-transform: uppercase;
-	margin-bottom: 0.5em
+	margin-bottom: 0.75em
 }
 #start {
-	font-family: 'Metamorphous', 'Medieval Sharp', serif;
+	font-family: 'MedievalSharp', serif;
 	font-size: 2.5em;
 	width: 10em;
 	height: 1.3em;
@@ -91,11 +91,12 @@ h1 {
 	outline: none;
 	border-style: none;
 	text-transform: uppercase;
+	padding-top: 0.17em;
 }
 #start:hover {
 	background-color: #B61C42;
 }
-.count {
+#count {
 	position: absolute;
 	top: 2.2em;
 	left: 0;
@@ -111,10 +112,10 @@ h1 {
 }
 #qimage{
 	margin-top: 0.6em;
-	margin-bottom: 0.6em;
+	margin-bottom: 0.7em;
 }
 .question {
-	width: 12em;
+	width: 12.5em;
 	height: 1em;
 	margin-left: auto;
 	margin-right: auto;
@@ -124,9 +125,10 @@ h1 {
 }
 p {
 	margin-bottom: 0.5em;
+	margin-top: 0.5em;
 }
-ol{
-	width: 12em;
+ul{
+	width: 12.5em;
 }
 li {
 	height: 1.15em;
@@ -134,14 +136,18 @@ li {
 	margin-bottom: 0.2em;
 	border-radius: 7px;
 	font-size: 0.9em;
-	padding-top: 0.15em;
+	padding-top: 0.25em;
 }
 li:hover {
 	background-color: #F5C354;
 	color: #52383E;
 }
+li.correct {
+	background-color: #77B38A;
+	color: #52383E;
+}
 .help {
-	width: 30em;
+	width: 30.2em;
 	height: 1em;
 	margin: 0.6em auto;
 	text-align: center;
@@ -153,6 +159,11 @@ li:hover {
 }
 .hint:hover {
 	color: #FFF;
+}
+.transparent {
+	width: inherit;
+	height: inherit;
+	opacity: 0.1;
 }
 .overlay {
 	position: absolute;
@@ -178,7 +189,7 @@ h3 {
 .hint-text {
 	padding-left: 1.2em;
 	padding-right: 1.2em;
-	font-size: 1.25em;
+	font-size: 1.4em;
 }
 .close {
 	color: #52383E;
@@ -193,6 +204,9 @@ h3 {
 	margin-right: 5em;
 	text-align: center;
 }
+a:hover {
+	color: #FFF;
+}
 .proceed {
 	color: #F5C354;
 	font-size: 1.8em;
@@ -200,6 +214,6 @@ h3 {
 }
 .explanation {
 	color: #FFF;
-	font-size: 1.2em;
+	font-size: 1.3em;
 }
 
