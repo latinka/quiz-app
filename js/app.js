@@ -3,6 +3,7 @@ var allQuestions = [
 	{
 		question		: "On what date is Harry's birthday?",
 		image     		: "img/birthday-cake.png",
+														
 		choices 		: [
 							"August 15",
 							"January 1",
@@ -11,7 +12,7 @@ var allQuestions = [
 							],
 		correct			: 2, 
 		explanationc	: "Correct! The only child of James and Lily Potter, Harry was born on the 31st of July. On his 11th birthday he learned he's a wizard and received his acceptance letter to Hogwarts!",
-		explanationw	: "Don't sweat it- that's why we have Facebook!)The only child of James and Lily Potter, Harry was born on the 31st of July. On his 11th birthday he learned he's a wizard and received his acceptance letter to Hogwarts!", 
+		explanationw	: "Don't sweat it- that's why we have Facebook! The only child of James and Lily Potter, Harry was born on the 31st of July. On his 11th birthday he learned he's a wizard and received his acceptance letter to Hogwarts!", 
 		hint			: "Hagrid gives Harry a birthday cake as a gift when they first meet in the Hut-on-the-Rock.", 
 	},
 	{
@@ -25,7 +26,7 @@ var allQuestions = [
 							], 
 		correct			: 0,
 		explanationc	: "Correct! Harry's wand is 11'' long, made of holly, and has a phoenix feather core. This was described by Ollivander to be an unusual combination of wand core and wood.",
-		explanationw	: "Maybe you had too much butterbeer!)Harry's wand is 11'' long, made of holly, and has a phoenix feather core. This was described by Ollivander to be an unusual combination of wand core and wood.",
+		explanationw	: "Maybe you had too much butterbeer! Harry's wand is 11'' long, made of holly, and has a phoenix feather core. This was described by Ollivander to be an unusual combination of wand core and wood.",
 		hint			: "Harry's and Voldemort's wands are brothers- they have the same core! Priori Incantatem!", 
 	},
 	{
@@ -83,7 +84,7 @@ var allQuestions = [
 							"China and Kenya"
 							], 
 		correct 		: 2, 
-		explanationc	: "Correct! The 422nd Quidditch World Cup was held in England. Its official sponsors were Butterbeer, Pumpkin juice, Gringotts Wizarding bank and Nimbus 2001. The final was between Ireland and Bulgaria. Ireland won.",
+		explanationc	: "Correct! The 422nd Quidditch World Cup was held in England. Its official sponsors were Butterbeer, Pumpkin Juice, Gringotts Wizarding Bank and Nimbus 2001. The final was between Ireland and Bulgaria. Ireland won.",
 		explanationw 	: "Maybe you're more into Muggle sports. The 422nd Quidditch World Cup was held in England. Its official sponsors were Butterbeer, Pumpkin juice, Gringotts Wizarding bank and Nimbus 2001. The final was between Ireland and Bulgaria. Ireland won.", 
 		hint			: "Victor Krum caught the Snitch! Brackium Emendo!", 
 	},
@@ -156,9 +157,11 @@ $(document).ready(function() {
 	$("#qimage").hide();
 	$(".answers").hide();
 	$(".hint").hide();
-	$(".overlay").hide();
+	$("#modal").hide();
 	$(".next").hide();
 	$(".explanation").hide();
+	$(".blur").hide();
+	$("#overlay").hide();
 
 $("#start").on("click", function(){
 	$("#simage").hide();
@@ -175,18 +178,29 @@ $("#start").on("click", function(){
 });
 
 $(".hint").on("click", function(){
-	$(".transparent").show();
-	$(".overlay").fadeIn(500);
+	$("#count").hide();
+	$("#overlay").fadeIn(500);
+	$("#modal").fadeIn(500);
 });
 
 $(".close").on("click", function(){
-	$(".overlay").fadeOut(500);
+	$("#count").show();
+	$("#modal").fadeOut(500);
+	$("#overlay").fadeOut(500);
 });
 
-$("ul").on("click", "li", function(){
+$("#overlay").on("click", function(){
+	$("#count").show();
+	$("#modal").fadeOut(500);
+	$("#overlay").fadeOut(500);
+});
+
+
+$("#answers").on("click", function(){
 	$(".hint").hide();
 	$(".next").fadeIn(500);
 	$(".explanation").fadeIn(500);
+	checkAnswer();
 });
 
 var currentQuestion = -1;
@@ -196,7 +210,42 @@ var counter = function(){
 	$("#count").text("Question " + (currentQuestion+1) + " of 10");
 };
 
-//var quiz = document.getElementById("quiz");
+
+
+function askQuestion(){
+		var choices = allQuestions[currentQuestion].choices;
+		$(".ask").text(allQuestions[currentQuestion].question);
+		
+		for (var i = 0; i < choices.length; i++){
+			var radio_button = $("<input>")
+				.attr("id", "choices-" + i)
+				.attr("type", "radio")
+				.attr("name", "choices")
+				.attr("value", i)
+				.attr("checked", i === this.user_choice)
+				.appendTo("#answers");
+			
+			var choice_label = $("<label>")
+				.text(choices[i])
+				.attr("for", "choices-" + i)
+				.appendTo("#answers");
+		};
+
+	$(".hint-text").text(allQuestions[currentQuestion].hint);
+	$("#qimage").attr("src", allQuestions[currentQuestion].image);
+
+};
+
+function checkAnswer(){
+	var userAnswer = $("input[type=radio]:checked").val();
+	if (userAnswer === allQuestions[currentQuestion].correct) {
+		$(".explanation").text(allQuestions[currentQuestion].explanationc)
+		score++;
+	}
+	else {
+		$(".explanation").text(allQuestions[currentQuestion].explanationw);
+	};
+};
 
 $(".next").on("click", function(){
 	currentQuestion++;
@@ -204,19 +253,8 @@ $(".next").on("click", function(){
 	$(".next").hide();
 	$(".explanation").hide();
 	$(".hint").show();
-	$("ul").empty();
+	$("#answers").empty();
 	askQuestion();
 });
-
-function askQuestion(){
-	var choices = allQuestions[currentQuestion].choices;
-	$(".ask").text(allQuestions[currentQuestion].question);
-	for (var i = 0; i < choices.length; i++){
-		$("<li>").text(choices[i]).appendTo("ul");
-	};
-	$(".explanation").text(allQuestions[currentQuestion].explanationc);
-	$(".hint-text").text(allQuestions[currentQuestion].hint);
-	$("#qimage").attr("src", allQuestions[currentQuestion].image);
-};
 
 });
