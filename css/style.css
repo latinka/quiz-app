@@ -53,7 +53,7 @@ table {
 
 body {
 	background-color: #3F043C;
-	font-family: 'MedievalSharp', 'Shadows Into Light', cursive;
+	font-family: 'MedievalSharp', 'Shadows Into Light', sans-serif;
 }
 a {
 	text-decoration: none;
@@ -81,7 +81,7 @@ h1 {
 	margin-bottom: 0.75em
 }
 #start {
-	font-family: 'MedievalSharp', 'Shadows Into Light', cursive;
+	font-family: 'MedievalSharp', 'Shadows Into Light', sans-serif;
 	font-size: 2.5em;
 	width: 10em;
 	height: 1.3em;
@@ -98,7 +98,7 @@ h1 {
 	cursor: pointer;
 }
 #restart {
-	font-family: 'MedievalSharp', 'Shadows Into Light', cursive;
+	font-family: 'MedievalSharp', 'Shadows Into Light', sans-serif;
 	font-size: 2.5em;
 	width: 10em;
 	height: 1.3em;
@@ -186,7 +186,7 @@ label:hover {
 	background-color: #FF4551;
 	color: #FFF;
 }
-.answered:hover { 
+.answered:hover {
 	color: #FFF;
 	background-color: #3F043C;
 }
@@ -264,7 +264,7 @@ a:hover {
 	text-transform: uppercase;
 }
 .explanation {
-	font-family: 'Bubbler One';
+	font-family: 'Bubbler One', sans-serif;
 	color: #FFF;
 	font-size: 1.3em;
 }
@@ -274,7 +274,7 @@ a:hover {
    left: -9999px !important;
 }
 .feedback{
-	font-family: 'Bubbler One';
+	font-family: 'Bubbler One', sans-serif;
 	width: 12.5em;
 	color: #FFF;
 	font-size: 2em;
